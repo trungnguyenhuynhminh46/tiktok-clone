@@ -1,0 +1,21 @@
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap, $dir: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $dir;
+}
+
+.wrapper {
+    @include flex(flex-start, center, nowrap, column);
+}
+
+.container {
+    width: 115rem;
+    min-height: 100rem;
+    @include flex();
+}
+
+.content {
+    flex: 1;
+}

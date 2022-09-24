@@ -1,0 +1,29 @@
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap, $dir: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $dir;
+}
+
+.header {
+    @include flex(center, stretch);
+    width: 100vw;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}
+
+.container {
+    @include flex(space-between, center);
+    width: 115rem;
+    height: 6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.form {
+    @include flex(flex-start, stretch);
+}
+
+.options {
+    @include flex(flex-start, center);
+}
