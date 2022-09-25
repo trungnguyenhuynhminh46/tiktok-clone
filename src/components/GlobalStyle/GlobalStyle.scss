@@ -1,5 +1,5 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@import './fonts.css';
 :root {
     --primary-color: rgba(254, 44, 85, 1);
     --secondary-color: rgb(32, 213, 236);
@@ -14,8 +14,21 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'ProximaNova' !important;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
+}
+button,
+input,
+[tabindex] {
+    border: none;
+    outline: none;
+}
+a[href] {
+    text-decoration: none;
+}
+
+.space-around {
+    justify-content: space-around;
 }

@@ -19,11 +19,92 @@
     padding-left: 2rem;
     padding-right: 2rem;
 }
+.logo {
+    @include flex(flex-start, center);
+}
+
+.form,
+.search-result {
+    width: 36rem;
+}
 
 .form {
-    @include flex(flex-start, stretch);
+    position: relative;
+    @include flex(flex-start, center);
+    padding: 0.7rem 1.6rem;
+
+    border-radius: 9.2rem;
+    background: rgb(241, 241, 242);
+    input {
+        flex: 1;
+        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+
+        caret-color: var(--primary-color);
+        color: rgb(22, 24, 35);
+        background: transparent;
+        border: none;
+        outline: none;
+        &:not(:placeholder-shown) ~ .search {
+            color: rgba(22, 24, 35, 0.75);
+        }
+    }
+    .clear,
+    .loading {
+        position: absolute;
+        right: calc(5rem + 1.2rem);
+
+        font-size: 1.5rem;
+        border: none;
+        color: rgba(22, 24, 35, 0.34);
+    }
+    .spliter {
+        display: inline-block;
+        margin-right: 1.4rem;
+
+        width: 1px;
+        height: 28px;
+        background: rgba(22, 24, 35, 0.12);
+    }
+    .search {
+        cursor: pointer;
+        padding: 1rem 1.7rem 1rem 1.3rem;
+        margin: -1rem -1.7rem -1rem -1.3rem;
+
+        font-size: 2rem;
+        border: none;
+        border-radius: 0 9.2rem 9.2rem 0;
+
+        color: rgba(22, 24, 35, 0.34);
+        &:hover {
+            background: rgba(22, 24, 35, 0.03);
+        }
+    }
+    border: 1.5px solid transparent;
+    &:focus-within {
+        border: 1.5px solid rgba(22, 24, 35, 0.2);
+    }
 }
 
 .options {
     @include flex(flex-start, center);
+}
+
+.option:not(:first-child) {
+    margin-left: 1.6rem;
+}
+
+.title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
+}
+
+.red {
+    color: red;
 }
