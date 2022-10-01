@@ -36,6 +36,7 @@
     font-weight: 600;
     color: var(--text-color);
     background-color: white;
+    border: 1px solid rgba(22, 24, 35, 0.12);
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);
     }
@@ -48,11 +49,11 @@
     }
 }
 .justIcon {
-    min-width: 0;
+    min-width: 2rem;
     height: 2rem;
-    width: 2rem;
     font-size: 2rem;
     padding: 0;
+    color: rgba(22, 24, 35, 1);
 }
 // Size
 .wrapper.small {

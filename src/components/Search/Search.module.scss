@@ -5,24 +5,25 @@
     flex-wrap: $wrap;
     flex-direction: $dir;
 }
-
-.header {
-    @include flex(center, stretch);
-    width: 100vw;
-    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+@keyframes loading-circle-anim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
-
-.container {
-    @include flex(space-between, center);
-    width: 115rem;
-    height: 6rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+.loadingSpinner {
+    animation: 1s linear 0s infinite normal none running loading-circle-anim;
 }
-.logo {
-    @include flex(flex-start, center);
+.title {
+    height: 30px;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: rgba(22, 24, 35, 0.5);
 }
-
 .form,
 .search-result {
     width: 36rem;
@@ -37,7 +38,8 @@
     background: rgb(241, 241, 242);
     input {
         flex: 1;
-        font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+        padding-right: 4rem;
+        font-family: var(--primary-font-family);
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
@@ -47,14 +49,15 @@
         background: transparent;
         border: none;
         outline: none;
-        &:not(:placeholder-shown) ~ .search {
-            color: rgba(22, 24, 35, 0.75);
+        &:not(:placeholder-shown) ~ .search svg {
+            fill: rgba(22, 24, 35, 0.75);
         }
     }
     .clear,
     .loading {
+        display: flex;
         position: absolute;
-        right: calc(5rem + 1.2rem);
+        right: 5.5rem;
 
         font-size: 1.5rem;
         border: none;
@@ -69,6 +72,7 @@
         background: rgba(22, 24, 35, 0.12);
     }
     .search {
+        @include flex(center, center);
         cursor: pointer;
         padding: 1rem 1.7rem 1rem 1.3rem;
         margin: -1rem -1.7rem -1rem -1.3rem;
@@ -81,30 +85,12 @@
         &:hover {
             background: rgba(22, 24, 35, 0.03);
         }
+        &:active {
+            background: rgba(22, 24, 35, 0.06);
+        }
     }
     border: 1.5px solid transparent;
     &:focus-within {
         border: 1.5px solid rgba(22, 24, 35, 0.2);
     }
-}
-
-.options {
-    @include flex(flex-start, center);
-}
-
-.option:not(:first-child) {
-    margin-left: 1.6rem;
-}
-
-.title {
-    height: 30px;
-    padding: 5px 12px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 600;
-    color: rgba(22, 24, 35, 0.5);
-}
-
-.red {
-    color: red;
 }

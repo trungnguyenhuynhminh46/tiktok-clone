@@ -1,0 +1,52 @@
+@mixin flex($justify: flex-start, $align: flex-start, $wrap: nowrap, $dir: row) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+    flex-direction: $dir;
+}
+
+.header {
+    position: fixed;
+    @include flex(center, stretch);
+    width: 100%;
+    height: 6rem;
+    box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+}
+
+.container {
+    @include flex(space-between, center);
+    width: 115rem;
+    height: 6rem;
+    padding-left: 2rem;
+    padding-right: 2.4rem;
+
+    background: white;
+}
+.logo {
+    @include flex(flex-start, center);
+}
+// Start menu
+
+.options {
+    @include flex(flex-start, center);
+}
+
+.option:not(:first-child) {
+    margin-left: 1.6rem;
+    &.user {
+        margin-left: 2.4rem;
+    }
+}
+// Actions
+.user-thumb {
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}

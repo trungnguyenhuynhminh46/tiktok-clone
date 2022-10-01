@@ -8,11 +8,14 @@
 
 .wrapper {
     @include flex(flex-start, center, nowrap, column);
+    min-width: 1000px;
 }
 
 .container {
+    margin-top: 6rem;
     width: 115rem;
     min-height: 100rem;
+    padding: 0 2rem;
     @include flex();
 }
 
