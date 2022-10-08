@@ -94,6 +94,7 @@ const Search = () => {
                         className={cx('search')}
                         onMouseDown={(e) => {
                             e.preventDefault();
+                            textInputRef.current.blur();
                         }}
                     >
                         <IconMagnifyingGlass width="24px" height="24px"></IconMagnifyingGlass>

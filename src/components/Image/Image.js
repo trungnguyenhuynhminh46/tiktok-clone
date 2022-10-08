@@ -7,13 +7,20 @@ import PropTypes from 'prop-types';
 import images from '~/assets/images';
 import styles from './Image.module.scss';
 
-const Image = ({ src, alt, className: inputClassName, fallback: inputFallback = images.default_img, ...props }) => {
+const Image = ({
+    src,
+    alt,
+    style,
+    className: inputClassName,
+    fallback: inputFallback = images.default_img,
+    ...props
+}) => {
     const [fallback, setFallback] = useState('');
     function handleError(e) {
         setFallback(inputFallback);
     }
     const className = classNames(styles.wrapper, inputClassName);
-    return <img className={className} src={fallback || src} alt={alt} onError={handleError} {...props} />;
+    return <img style={style} className={className} src={fallback || src} alt={alt} onError={handleError} {...props} />;
 };
 
 Image.propTypes = {
